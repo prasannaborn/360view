@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>3D View</title>
+  <meta name="title" content="3D View" />
+  <meta name="description" content="3D View" />
+  <link rel="image_src" href="/images/interactive_3d.png" />
+  <meta content="http://www.thepetedesign.com/demos/interactive_3d.html" property="og:url" />
+  <meta content="http://www.thepetedesign.com/images/interactive_3d.png" property="og:image" />
+  <link rel="shortcut icon" id="favicon" href="favicon.png">
+  <meta name="author" content="">
+  <link rel="canonical" href="http://www.thepetedesign.com/demos/interactive_3d.html" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+  <link href='css/styles.css' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="js/jquery.interactive_3d.js"></script>
+  <script type="text/javascript" src="js/lib.js"></script>
+</head>
+
+<body>
+  <!--  <div id="banner">
+    <img src="ad/armour.jpg" />
+  </div> -->
+
+  <!-- 
+  <div class="wrapper">
+    <div class="main">
+      <div class="page_container">
+        <div id="i3d" class="interactive_3d">
+          <div class="caption"></div>
+          <img src="images/frame_1.jpg">
+          <div class="check">
+            <div class="check-in">
+              <span>Lace</span>
+            </div>
+          </div>
+          <div class="logo">
+            <div class="logo-in">
+              <span>Under Armour</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <iframe id="ifrm" src="main.html" frameborder="0" scrolling="no" margin="0"></iframe>
+  <!-- <iframe id="ifrm" src="main.html" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
+      style="height:auto;width:100%;border:none;overflow:hidden;"></iframe>
+
+  </iframe> -->
+  <script>
+    $("#ifrm").on("load", () => {
+      var wrapper = $("#ifrm").contents().find(".wrapper");
+      var banner = $("#ifrm").contents().find("#banner");
+      var check = $("#ifrm").contents().find(".check");
+      var logo = $("#ifrm").contents().find(".logo");
+      var page_container = $("#ifrm").contents().find(".page_container");
+      var button = $("#ifrm").contents().find(".img-caption");
+      $("#ifrm").css({ "width": banner.outerWidth(), "height": banner.outerHeight() })
+      var container_height = page_container.outerHeight();
+      var container_width = page_container.outerWidth();
+      // $(wrapper).hide();
+      console.log("hi");
+      var j = 0;
+      $(button).on("click", () => {
+        if (j === 0) {
+          $(wrapper).css({ "position": "absolute", "top": "0" });
+          $("#ifrm").css({ "width": container_width, "height": container_height });
+          for (var i = 0; i <= container_height; i++) {
+            i = i + 8;
+            if (i > container_height) { break; }
+            // console.log(container_height + "--" + i);
+            $(wrapper).animate({
+              height: i
+            }, 5);
+          }
+          /* $(page_container).animate({
+            height: container_height + "px"
+          },{
+              duration: 5000,
+              easing: "linear"
+          }); */
+        }
+        j++;
+      });
+      $(wrapper).on("mouseover", function () {
+        $(logo).css("background-image", "url('ad/hotspot.png')");
+        $(check).css("background-image", "url('ad/hotspot.png')");
+      });
+      $(wrapper).on("mouseleave", function () {
+        $(logo).css("background-image", "");
+        $(check).css("background-image", "");
+      });
+    });
+  </script>
+</body>
+
+</html>
