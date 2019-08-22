@@ -38,9 +38,9 @@ body {
   width: 100%;
 }
 .wrapper {
-  margin: 0 auto;
-  height: 0;
-  /* transition: height 5s linear; */
+  margin: -100% auto 0;
+
+  transition: all 1.5s ease-in-out;
 }
 
 .img-wrapper {
@@ -52,10 +52,6 @@ body {
   top: 54px;
   cursor: pointer;
 }
-/* .wrapper.add_height {
-  height: 750;
-} */
-
 a {
   text-decoration: none;
 }

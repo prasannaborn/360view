@@ -11,6 +11,7 @@
   <meta content="http://www.thepetedesign.com/images/interactive_3d.png" property="og:image" />
   <link rel="shortcut icon" id="favicon" href="favicon.png">
   <meta name="author" content="">
+  <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="http://www.thepetedesign.com/demos/interactive_3d.html" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
@@ -18,11 +19,54 @@
   <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/jquery.interactive_3d.js"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/lib.js"></script>
 </head>
 
 <body>
-  <iframe id="ifrm" src="main.html" frameborder="0" scrolling="no" margin="0"></iframe>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container" style="margin:0 22.7%;">
+      <a class="navbar-brand" href="#" style="text-align: initial">
+        <!-- <img src="ad/logo.jpg" alt="" style="width: 13%;"> -->
+        <h2>LOGO</h2>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">****
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">****</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">****</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">****</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <iframe id="ifrm" src="main.html" frameborder="0" scrolling="no" margin="0" style="margin-top:35px;width:100%"></iframe>
+  </div>
+  <!-- /.container -->
+
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="position:absolute;width:100%;bottom:0;">
+    <div class="container text-center">
+      <small>****** &copy; **** *****</small>
+    </div>
+  </footer>
 
   <script>
     $("#ifrm").on("load", () => {
@@ -39,23 +83,18 @@
       console.log("hi");
       // var j = 0;
       $(button).on("click", () => {
+        /*  $(banner).hide(); */
         // if (j === 0) {
-        $(wrapper).css({ "position": "absolute", "top": "0" });
+        /* $(wrapper).css({ "position": "absolute", "top": "0" }); */
         $("#ifrm").css({ "width": container_width, "height": container_height });
-        /*  for (var i = 0; i <= container_height; i++) {
-           i = i + 8;
-           if (i > container_height) { break; }
-           // console.log(container_height + "--" + i);
-           $(wrapper).animate({
-             height: i
-           }, 5);
-         } */
-        $(wrapper).animate({
-          height: container_height + "px"
-        }, {
-            duration: 2500,
-            easing: "easeInOutExpo"
-          });
+        /*  $(wrapper).animate({
+           height: container_height + "px"
+         }, {
+             duration: 1500,
+             easing: "easeOutExpo"
+           }); */
+        $(wrapper).css({ "margin": "0 auto 0", "position": "absolute", "top": "0" });
+        //  $(banner).hide(2000);
         //}
         // j++;
       });
