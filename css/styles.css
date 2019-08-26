@@ -129,6 +129,7 @@ pre code {
   width: 7%;
   z-index: 10;
   display: none;
+  cursor: pointer;
 }
 .reload.bell {
   font-size: 12px;
