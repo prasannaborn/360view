@@ -58,7 +58,7 @@
 
   <!-- Page Content -->
   <div class="container">
-    <iframe id="ifrm" src="main.html" frameborder="0" scrolling="no" margin="0" style="margin-top:35px;width:100%"></iframe>
+    <iframe id="ifrm" src="main.html" frameborder="0" scrolling="no" margin="0" style="margin-top:15px;width:100%"></iframe>
   </div>
   <!-- /.container -->
 
@@ -76,6 +76,7 @@
       var logo = $("#ifrm").contents().find(".logo");
       var page_container = $("#ifrm").contents().find(".page_container");
       var button = $("#ifrm").contents().find(".img-caption");
+      var close = $("#ifrm").contents().find("#close");
       $("#ifrm").css({ "width": banner.outerWidth(), "height": banner.outerHeight() })
       var container_height = page_container.outerHeight();
       var container_width = page_container.outerWidth();
@@ -87,6 +88,7 @@
         // if (j === 0) {
         /* $(wrapper).css({ "position": "absolute", "top": "0" }); */
         $("#ifrm").css({ "width": container_width, "height": container_height });
+        $(close).css("display", "block");
         /*  $(wrapper).animate({
            height: container_height + "px"
          }, {
@@ -97,6 +99,10 @@
         //  $(banner).hide(2000);
         //}
         // j++;
+      });
+      $(close).on("click", () => {
+        $(close).css("display", "block");
+        $(wrapper).css({ "margin": "-100% auto 0", "position": "absolute", "top": "0" });
       });
       $(wrapper).on("mouseover", function () {
         $(logo).css("background-image", "url('ad/hotspot.png')");

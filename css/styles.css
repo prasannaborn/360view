@@ -122,6 +122,14 @@ pre code {
   background: #1abc9c;
 }
 
+#close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 7%;
+  z-index: 10;
+  display: none;
+}
 .reload.bell {
   font-size: 12px;
   padding: 20px;
