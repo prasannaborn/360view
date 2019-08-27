@@ -118,20 +118,6 @@ pre code {
   letter-spacing: -1px;
 }
 
-.main h1.demo1 {
-  background: #1abc9c;
-}
-
-#close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 5%;
-  z-index: 10;
-  display: none;
-  cursor: pointer;
-}
-
 #add_to_cart {
   position: absolute;
   left: 0;
@@ -149,6 +135,19 @@ pre code {
   /* border-radius: 5px; */
 }
 
+.main h1.demo1 {
+  background: #1abc9c;
+}
+
+#close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5%;
+  z-index: 10;
+  display: none;
+  cursor: pointer;
+}
 .reload.bell {
   font-size: 12px;
   padding: 20px;
@@ -373,11 +372,6 @@ pre code {
   top: 0%;
   background: url(../images/line2.png) no-repeat;
   left: 0;
-}
-@media screen and (max-width: 1000px) {
-  iframe {
-    margin-left: -24%;
-  }
 }
 
 @media screen and (max-width: 948px) {

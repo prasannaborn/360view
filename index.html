@@ -78,18 +78,32 @@
       var button = $("#ifrm").contents().find(".img-caption");
       var close = $("#ifrm").contents().find("#close");
       var add_to_cart = $("#ifrm").contents().find("#add_to_cart");
+      $("#ifrm").css({ "width": banner.outerWidth(), "height": banner.outerHeight() })
       var container_height = page_container.outerHeight();
       var container_width = page_container.outerWidth();
-
-      $("#ifrm").css({ "width": banner.outerWidth(), "height": banner.outerHeight() });
+      // $(wrapper).hide();
+      console.log("hi");
+      // var j = 0;
       $(button).on("click", () => {
+        /*  $(banner).hide(); */
+        // if (j === 0) {
+        /* $(wrapper).css({ "position": "absolute", "top": "0" }); */
         $("#ifrm").css({ "width": container_width, "height": container_height });
         $(close).css("display", "block");
         $(add_to_cart).css("display", "block");
+        /*  $(wrapper).animate({
+           height: container_height + "px"
+         }, {
+             duration: 1500,
+             easing: "easeOutExpo"
+           }); */
         $(wrapper).css({ "margin": "0 auto 0", "position": "absolute", "top": "0" });
+        //  $(banner).hide(2000);
+        //}
+        // j++;
       });
       $(close).on("click", () => {
-        $(close).css("display", "none");
+        $(close).css("display", "block");
         $(add_to_cart).css("display", "none");
         $(wrapper).css({ "margin": "-100% auto 0", "position": "absolute", "top": "0" });
       });
