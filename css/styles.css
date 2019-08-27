@@ -31,25 +31,29 @@ body {
 }
 
 #banner {
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
 #banner > img {
   width: 100%;
 }
 .wrapper {
-  margin: -100% auto 0;
-
+  margin: -105% auto 0;
+  width: 100%;
   transition: all 1.5s ease-in-out;
 }
 
 .img-wrapper {
   position: relative;
 }
+
+/* .img-wrapper img {
+  width: 100%;
+} */
 .img-caption {
   position: absolute;
-  right: 30px;
-  top: 54px;
+  right: 74px;
+  top: 57px;
   cursor: pointer;
 }
 a {
@@ -124,13 +128,31 @@ pre code {
 
 #close {
   position: absolute;
-  right: 0;
+  right: 5%;
   top: 0;
-  width: 7%;
+  width: 5%;
   z-index: 10;
   display: none;
   cursor: pointer;
 }
+
+#add_to_cart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5%;
+  padding: 10px 25px;
+  background-color: #e51b24;
+  color: white;
+  border: 0;
+  display: none;
+  z-index: 10;
+  width: 12%;
+  text-align: center;
+  margin: 0 auto;
+  /* border-radius: 5px; */
+}
+
 .reload.bell {
   font-size: 12px;
   padding: 20px;
@@ -224,6 +246,7 @@ pre code {
 .page_container {
   overflow: hidden;
   max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -357,8 +380,24 @@ pre code {
   left: 0;
 }
 
+/* @media screen and (max-width: 1200px) {
+  #close {
+    right: 0;
+  }
+}
+@media screen and (max-width: 1440px) {
+  #close {
+    right: 5%;
+  }
+} */
+@media screen and (max-width: 992px) {
+  .img-caption {
+    right: -15px;
+    top: 56px;
+  }
+}
 @media screen and (max-width: 948px) {
-  .caption {
+  /*  .caption {
     width: 100%;
     float: left;
     text-align: center;
@@ -367,7 +406,7 @@ pre code {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     margin-bottom: 45px;
-  }
+  } */
   .main h1 {
     margin-top: 15px;
   }
@@ -376,7 +415,7 @@ pre code {
   }
   .page_container .interactive_3d > img {
     width: 100%;
-    max-width: 333px;
+    /* max-width: 333px; */
     float: none;
   }
 }
