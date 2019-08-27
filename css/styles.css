@@ -374,6 +374,11 @@ pre code {
   background: url(../images/line2.png) no-repeat;
   left: 0;
 }
+@media screen and (max-width: 1000px) {
+  iframe {
+    margin-left: -24%;
+  }
+}
 
 @media screen and (max-width: 948px) {
   .caption {
