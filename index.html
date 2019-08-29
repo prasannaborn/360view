@@ -77,43 +77,46 @@
       var page_container = $("#ifrm").contents().find(".page_container");
       var button = $("#ifrm").contents().find(".img-caption");
       var close = $("#ifrm").contents().find("#close");
+      var cart_wrapper = $("#ifrm").contents().find(".cart_wrapper");
       var add_to_cart = $("#ifrm").contents().find("#add_to_cart");
+      var sizes = $("#ifrm").contents().find(".sizes");
+      var pulse = $("#ifrm").contents().find(".btn-pulse");
+      var ul = $("#ifrm").contents().find(".size_list");
+      var li = $("#ifrm").contents().find("li");
+
       $("#ifrm").css({ "width": banner.outerWidth(), "height": banner.outerHeight() })
       var container_height = page_container.outerHeight();
       var container_width = page_container.outerWidth();
-      // $(wrapper).hide();
-      console.log("hi");
-      // var j = 0;
       $(button).on("click", () => {
-        /*  $(banner).hide(); */
-        // if (j === 0) {
-        /* $(wrapper).css({ "position": "absolute", "top": "0" }); */
         $("#ifrm").css({ "width": container_width, "height": container_height });
         $(close).css("display", "block");
-        $(add_to_cart).css("display", "block");
-        /*  $(wrapper).animate({
-           height: container_height + "px"
-         }, {
-             duration: 1500,
-             easing: "easeOutExpo"
-           }); */
+        $(cart_wrapper).css("display", "block");
         $(wrapper).css({ "margin": "0 auto 0", "position": "absolute", "top": "0" });
-        //  $(banner).hide(2000);
-        //}
-        // j++;
+      });
+      $(li).on("click", (e) => {
+        $(e.target)
+          .addClass("selected")
+          .siblings()
+          .removeClass("selected");
+        $(sizes).css("display", "none");
+        $(add_to_cart).css("display", "block");
+      });
+      $(close).on("mouseover", () => {
+        $(check).hide();
+        $(logo).hide();
       });
       $(close).on("click", () => {
         $(close).css("display", "block");
+        $(sizes).css("display", "block");
         $(add_to_cart).css("display", "none");
+        $(cart_wrapper).css("display", "none");
         $(wrapper).css({ "margin": "-100% auto 0", "position": "absolute", "top": "0" });
       });
       $(wrapper).on("mouseover", function () {
-        $(logo).css("background-image", "url('ad/hotspot.png')");
-        $(check).css("background-image", "url('ad/hotspot.png')");
+        $(pulse).css("display", "block");
       });
       $(wrapper).on("mouseleave", function () {
-        $(logo).css("background-image", "");
-        $(check).css("background-image", "");
+        $(pulse).css("display", "none");
       });
     });
   </script>

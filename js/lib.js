@@ -18,14 +18,12 @@
     $(".logo").mouseleave(function() {
       $(".logo-in").hide();
     });
-    /* var iframe = document.getElementById("ifrm");
-    let oldDoc = iframe.contentDocument;
-    iframe.onload = function() {
-      let newDoc = iframe.contentDocument;
-      // the loaded document is not the same as initial!
-      console.log(newDoc); // false
-    }; */
-    // $("iframe").css("width", $("#banner").outerWidth());
+    $(".size_list, #add_to_cart").mouseover(function() {
+      $(".check, .logo").hide();
+    });
+    $(".size_list, #add_to_cart").mouseleave(function() {
+      $(".check, .logo").show();
+    });
   });
   function ScrollZoom(container, max_scale, factor) {
     var target = container.children().first();

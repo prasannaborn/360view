@@ -118,18 +118,59 @@ pre code {
   letter-spacing: -1px;
 }
 
-#add_to_cart {
+.size_list {
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  list-style: none;
+  clear: both;
+}
+
+.size_list li {
+  font-weight: 400;
+  display: inline-block;
+  min-width: 40px;
+  height: 38px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #d2d2d2;
+  padding: 1px 6px;
+  color: #5a5a5a;
+  line-height: 2.16;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.size_list li:hover {
+  border: 2px solid #1d1d1d;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+li.selected {
+  border: 2px solid #1d1d1d;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.cart_wrapper {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 5%;
+  z-index: 10;
+  display: none;
+}
+
+#add_to_cart {
   padding: 10px 25px;
   background-color: #e51b24;
   color: white;
   border: 0;
   display: none;
-  z-index: 10;
-  width: 12%;
+  width: 20%;
   text-align: center;
   margin: 0 auto;
   /* border-radius: 5px; */
@@ -273,8 +314,8 @@ pre code {
   width: 300px;
   transform: rotate(35deg);
   /*  background-image: url("../ad/hotspot.png"); */
-  background-repeat: no-repeat;
-  background-position: center;
+  /* background-repeat: no-repeat;
+  background-position: center; */
 }
 
 .check-in {
@@ -337,8 +378,8 @@ pre code {
   width: 146px;
   height: 105px;
   /* background-image: url("../ad/hotspot.png"); */
-  background-repeat: no-repeat;
-  background-position: center;
+  /*  background-repeat: no-repeat;
+  background-position: center; */
 }
 
 .logo-in {
@@ -372,6 +413,117 @@ pre code {
   top: 0%;
   background: url(../images/line2.png) no-repeat;
   left: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Animation */
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  45% {
+    -webkit-transform: scale(1.75);
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  45% {
+    -webkit-transform: scale(1.75);
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes stop-pulsate {
+  from {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes stop-pulsate {
+  from {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+/* Button */
+.btn-pulse {
+  display: none;
+}
+.btn-pulse .circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  margin: -0.666em auto auto -0.666em;
+  background: #ed0048;
+  border-radius: 50%;
+  opacity: 0.6;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  transition: opacity 0.2s ease-in, -webkit-transform 0.1s ease-out;
+  transition: opacity 0.2s ease-in, transform 0.1s ease-out;
+  transition: opacity 0.2s ease-in, transform 0.1s ease-out,
+    -webkit-transform 0.1s ease-out;
+  color: white;
+  font-size: 1.5em;
+  padding: 0;
+  text-align: center;
+  line-height: 32px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.btn-pulse .circle:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.btn-pulse .circle:active {
+  -webkit-transform: scale(0.875);
+  transform: scale(0.875);
+}
+.btn-pulse .ring {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  margin: -1.5em auto auto -1.5em;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  border-radius: 50%;
+  border: 1.5px solid #ffff;
+  opacity: 0;
+  -webkit-animation: pulsate 2s ease-out infinite;
+  animation: pulsate 2s ease-out infinite;
+  cursor: pointer;
+}
+.btn-pulse:hover .ring {
+  -webkit-animation: none;
+  animation: none;
+}
+.btn-pulse:active .ring {
+  -webkit-animation: stop-pulsate 0.3s;
+  animation: stop-pulsate 0.3s;
 }
 
 @media screen and (max-width: 948px) {
