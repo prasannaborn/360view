@@ -26,7 +26,7 @@
     });
   });
   function ScrollZoom(container, max_scale, factor) {
-    var target = container.children().first();
+    var target = container.find(".main-frame"); //.children().first();
     var size = { w: target.width(), h: target.height() };
     var pos = { x: 0, y: 0 };
     var zoom_target = { x: 0, y: 0 };
@@ -85,6 +85,11 @@
           scale +
           ")"
       );
+      target.css({
+        "transition-property": "all",
+        "transition-timing-function": "ease-in",
+        "transition-duration": "0.5s"
+      });
     }
   }
 })(window.jQuery);
